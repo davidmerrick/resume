@@ -1,0 +1,15 @@
+image: node:7.9.0
+
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - apt-get update
+            - apt-get install -y wkhtmltopdf xvfb
+            - export DISPLAY=:99.0
+            - /usr/bin/Xvfb 99 &
+            - npm install
+            - npm install -g gulp
+            - gulp exportPdf
+            - gulp upload

@@ -1,0 +1,8 @@
+*.md
+!resume.md
+.idea
+node_modules
+*.pdf
+*.doc
+*.docx
+*.html
